@@ -37,7 +37,7 @@ arr.forEach(function(item, i){
     console.log(`Элемент ${i} имеет значение ${item}`);
 });
 
-arr.forEach(function(item, i){
+arr.forEach(function(item, i, arr){
     console.log(`Элемент ${i} имеет значение ${item} в массиве ${arr}`);
 });
 
