@@ -26,3 +26,5 @@ for (let keys in options) {
 console.log(Object.keys(options));
 //так мы получили массив свойств, а чтобы узнать длину пишем lenght для массива
 console.log(Object.keys(options).length);
+
+//delete options.name;
