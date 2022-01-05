@@ -57,11 +57,36 @@ obj2['a'] = 77; //изменили obj2, но obj1 не изменился
 console.log(obj1); //{ a: 5, b: 'какое то свойство', c: 2 }
 console.log(obj2); //{ a: 77, b: 'какое то свойство', c: 2 }
 
+//еще пример, объект со вложенным объектом, который показывает что копирование поверхностное
+
+let nunmbers = {
+    a : 5,
+    b : 9,
+    c : {
+        x : 4,
+        y : 33,
+    }
+};
+
+let copyNumbers = doObjcopy(nunmbers);
+copyNumbers.a = 7;
+copyNumbers.c.x = 77;  // так как копирование поверхностное, то вложенные объекты скопировались по ссылке, и у оригинала то же изменятся.
+
+console.log(nunmbers);      //{ a: 5, b: 9, c: { x: 77, y: 33 } }
+console.log(copyNumbers); //{ a: 7, b: 9, c: { x: 77, y: 33 } }
+
 //по мимо переборки свойств и значений одного объекта с подстановкой в другой объект для копирование есть еще способы:
+//Object.assign(mainObj, twoObj); Т.е помести в mainObj другой объект twoObj
+//Т.е. 
 
+let enotherNumbers = {
+    a1: 4,
+    a2: 44,
+    a3: 22
+};
 
-
-
+let joinNumbers = Object.assign(nunmbers,enotherNumbers);
+console.log(joinNumbers);
 
 
 
