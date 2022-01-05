@@ -1,4 +1,4 @@
-const arr = [0,2,8,6,12];
+const arr = [6,12,8,26,112];
 
 console.log(arr[1]);
 
@@ -52,3 +52,10 @@ arr.forEach(function(item, i, arr){
 //arr.slice(begin, end);
 //arr.reverse();
 //arr.concat(item1...);
+
+function compareNumber(a, b) {
+    return a - b;
+}
+
+arr.sort(compareNumber); // было 6,12,8,26,112 стало 6, 8, 12, 26, 112
+console.log(arr);
